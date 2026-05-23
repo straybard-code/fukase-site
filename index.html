@@ -1,116 +1,51 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>フカセ釣り判断ラボ | 釣果ではなく、判断を育てる</title>
-  <meta name="description" content="フカセ釣りの予測・実釣・差分レビューを記録し、釣り判断を育てるAI学習アプリのPoCサイトです。" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUKASE LAB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">フカセ釣り判断ラボ</div>
-      <nav>
-        <a href="#concept">コンセプト</a>
-        <a href="#features">機能</a>
-        <a href="#poc">PoC</a>
-      </nav>
-    </div>
+  <header class="hero">
+    <h1>FUKASE LAB</h1>
+    <p>釣果記録ではなく、釣り判断を育てる。</p>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">FUKASE FISHING × AI LEARNING</p>
-          <h1>釣果を記録するだけでなく、<br>釣りの判断を育てる。</h1>
-          <p class="lead">
-            釣行前の予測、実釣結果、AI差分レビューをつなげて、
-            「なぜ釣れたか」「なぜ外したか」を次回の判断に変えるための実験的アプリです。
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#poc">β版の考え方を見る</a>
-            <a class="button secondary" href="#features">できること</a>
-          </div>
-        </div>
-        <div class="hero-card">
-          <h2>学習ループ</h2>
-          <ol>
-            <li>釣行前に条件から予測する</li>
-            <li>実釣中に観測を残す</li>
-            <li>結果と予測の差分を確認する</li>
-            <li>次回の作戦に反映する</li>
-          </ol>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>このアプリについて</h2>
+    <p>
+      FUKASE LAB は、釣行前の予測、実釣結果、差分レビューを通じて、
+      釣り人自身の判断を学習・再利用するためのアプリです。
+    </p>
+  </section>
 
-    <section id="concept" class="section">
-      <div class="container narrow">
-        <p class="eyebrow">CONCEPT</p>
-        <h2>これは、釣果SNSではありません。</h2>
-        <p>
-          釣れた魚を見せるためではなく、自分の判断を再利用できる形で残すためのツールです。
-          潮、風、距離、タナ、仕掛け、エサ取り、根掛かり、魚の反応を記録し、
-          次の一投・次の釣行の精度を上げていきます。
-        </p>
-      </div>
-    </section>
+  <section>
+    <h2>できること</h2>
+    <ul>
+      <li>釣行前の予測作成</li>
+      <li>釣行結果の記録</li>
+      <li>AIによる差分レビュー</li>
+      <li>過去ログからのパターン抽出</li>
+      <li>釣り場・タックル管理</li>
+    </ul>
+  </section>
 
-    <section id="features" class="section muted">
-      <div class="container">
-        <p class="eyebrow">FEATURES</p>
-        <h2>できること</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>釣行前予測</h3>
-            <p>潮、時間帯、場所、狙い、仕掛けから初手作戦を整理します。</p>
-          </article>
-          <article class="card">
-            <h3>実釣ログ</h3>
-            <p>釣果だけでなく、反応、違和感、根掛かり、風、潮の変化を残します。</p>
-          </article>
-          <article class="card">
-            <h3>AI差分レビュー</h3>
-            <p>予測と結果のズレを確認し、次回の修正アクションに変換します。</p>
-          </article>
-          <article class="card">
-            <h3>パターン抽出</h3>
-            <p>過去ログから、釣れた条件・外した条件・切替ルールを見つけます。</p>
-          </article>
-        </div>
-      </div>
-    </section>
+  <section>
+    <h2>思想</h2>
+    <p>
+      このアプリは「釣果を競う」ことよりも、
+      「なぜ釣れたのか」「なぜ釣れなかったのか」を
+      観測・記録・改善することを重視しています。
+    </p>
+  </section>
 
-    <section id="privacy" class="section">
-      <div class="container narrow">
-        <p class="eyebrow">DATA POLICY</p>
-        <h2>個人ログを大切に扱う設計。</h2>
-        <p>
-          釣りログは、その人だけの経験資産です。PoC段階では、個人データを無理に集めるのではなく、
-          ローカル保存・任意共有・匿名化を前提に設計します。
-        </p>
-      </div>
-    </section>
-
-    <section id="poc" class="section dark">
-      <div class="container narrow">
-        <p class="eyebrow">PROOF OF CONCEPT</p>
-        <h2>まずは小さく公開し、反応を見る。</h2>
-        <p>
-          このサイトは、フカセ釣りにおける「AIと人間の判断循環」を検証するための入口です。
-          収益化を急ぐのではなく、本当に価値を感じる人がいるかを確かめながら育てます。
-        </p>
-        <a class="button primary" href="mailto:info@example.com?subject=β版について">β版に興味があります</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 フカセ釣り判断ラボ</p>
-    </div>
-  </footer>
+  <section class="cta">
+    <h2>β版公開準備中</h2>
+    <p>
+      現在、個人PoCとして開発・検証を進めています。<br>
+      釣りとAIの新しい関係を探る実験として公開予定です。
+    </p>
+  </section>
 </body>
 </html>
