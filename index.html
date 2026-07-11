@@ -3,39 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="refresh" content="0; url=/beta/">
   <title>FUKASE LAB</title>
-  <meta name="description" content="釣行計画、釣行中の記録、釣果管理、釣行後の振り返りをひとつにつなぐ釣り支援アプリのベータ版LPです。">
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #071a24;
-      color: #eef7fb;
-    }
-
-    main {
-      width: min(560px, calc(100% - 32px));
-      padding: 24px;
-      border: 1px solid rgba(173, 220, 238, 0.18);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.06);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    a {
-      color: #7cf3b8;
-      font-weight: 700;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <p>ベータ版LPは <a href="/beta/">/beta/</a> にあります。</p>
-  </main>
+  <header class="hero">
+    <h1>FUKASE LAB</h1>
+    <p>釣果記録ではなく、釣り判断を育てる。</p>
+  </header>
+
+  <section>
+    <h2>このアプリについて</h2>
+    <p>
+      FUKASE LAB は、釣行前の予測、実釣結果、差分レビューを通じて、
+      釣り人自身の判断を学習・再利用するためのアプリです。
+    </p>
+  </section>
+
+  <section>
+    <h2>できること</h2>
+    <ul>
+      <li>釣行前の予測作成</li>
+      <li>釣行結果の記録</li>
+      <li>AIによる差分レビュー</li>
+      <li>過去ログからのパターン抽出</li>
+      <li>釣り場・タックル管理</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>思想</h2>
+    <p>
+      このアプリは「釣果を競う」ことよりも、
+      「なぜ釣れたのか」「なぜ釣れなかったのか」を
+      観測・記録・改善することを重視しています。
+    </p>
+  </section>
+
+  <section class="cta">
+    <h2>β版公開準備中</h2>
+    <p>
+      現在、個人PoCとして開発・検証を進めています。<br>
+      釣りとAIの新しい関係を探る実験として公開予定です。
+    </p>
+    <p>
+      <a href="/beta/">ベータ版LPを見る</a>
+    </p>
+  </section>
 </body>
 </html>
