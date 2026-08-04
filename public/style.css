@@ -13,8 +13,6 @@
   --ink: #05131a;
   --ok-bg: rgba(80, 197, 139, 0.18);
   --ok-text: #86f1b7;
-  --mock-bg: rgba(245, 181, 92, 0.18);
-  --mock-text: #ffd79f;
   --off-bg: rgba(255, 117, 117, 0.18);
   --off-text: #ffbdbd;
   --shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
@@ -357,12 +355,6 @@ main {
   gap: 0.2rem;
 }
 
-.feature-card--mock {
-  background:
-    linear-gradient(180deg, rgba(245, 181, 92, 0.08), transparent 55%),
-    var(--surface);
-}
-
 .state-badge {
   display: inline-flex;
   width: fit-content;
@@ -378,11 +370,6 @@ main {
 .state-badge--available {
   background: var(--ok-bg);
   color: #08261f;
-}
-
-.state-badge--mock {
-  background: var(--mock-bg);
-  color: var(--mock-text);
 }
 
 .state-badge--unavailable {
