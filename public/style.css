@@ -224,10 +224,11 @@ h3 {
   margin-top: 1rem;
 }
 
-.button {
+body.beta-page .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   min-height: 3rem;
   padding: 0.85rem 1.1rem;
   border-radius: 999px;
@@ -237,23 +238,23 @@ h3 {
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
 }
 
-.button:focus-visible,
+body.beta-page .button:focus-visible,
 .faq-item summary:focus-visible {
   outline: 3px solid rgba(102, 224, 197, 0.45);
   outline-offset: 3px;
 }
 
-.button:hover {
+body.beta-page .button:hover {
   transform: translateY(-1px);
 }
 
-.button--primary {
+body.beta-page .button--primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
   color: var(--ink);
   box-shadow: 0 18px 30px rgba(83, 183, 255, 0.18);
 }
 
-.button--secondary {
+body.beta-page .button--secondary {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border);
   color: var(--text);
@@ -468,6 +469,16 @@ main {
   .hero-actions {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  body.beta-page .hero-actions .button {
+    width: auto;
+    min-width: 15rem;
+  }
+
+  body.beta-page .footer-cta__card .button {
+    width: auto;
+    min-width: 15rem;
   }
 
   .feature-grid {
