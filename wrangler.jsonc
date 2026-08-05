@@ -1,7 +1,9 @@
 {
   "name": "fukase-site",
   "compatibility_date": "2026-07-11",
+  "main": "./worker.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS"
   }
 }

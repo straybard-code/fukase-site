@@ -260,6 +260,12 @@ body.beta-page .button--secondary {
   color: var(--text);
 }
 
+body.beta-page .button[disabled] {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+}
+
 .hero-note {
   margin-top: 1rem;
   font-size: 0.92rem;
@@ -456,6 +462,137 @@ main {
   text-align: left;
 }
 
+body.beta-page .feedback-section {
+  margin-top: 0.25rem;
+}
+
+body.beta-page .feedback-form {
+  display: grid;
+  gap: 1rem;
+}
+
+body.beta-page .feedback-form__intro,
+body.beta-page .feedback-form__note,
+body.beta-page .form-status,
+body.beta-page .field__help,
+body.beta-page .field__meta {
+  color: var(--muted);
+}
+
+body.beta-page .feedback-form__intro {
+  font-weight: 700;
+}
+
+body.beta-page .form-status {
+  min-height: 1.5rem;
+  font-weight: 700;
+}
+
+body.beta-page .form-status[data-state="success"] {
+  color: var(--ok-text);
+}
+
+body.beta-page .form-status[data-state="error"] {
+  color: var(--off-text);
+}
+
+body.beta-page .feedback-form__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+body.beta-page .field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+body.beta-page .field__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  font-weight: 800;
+}
+
+body.beta-page .field__badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+body.beta-page .field input,
+body.beta-page .field select,
+body.beta-page .field textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--surface-strong);
+  color: var(--text);
+  padding: 0.95rem 1rem;
+  font: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+body.beta-page .field textarea {
+  min-height: 11rem;
+  resize: vertical;
+}
+
+body.beta-page .field input::placeholder,
+body.beta-page .field textarea::placeholder {
+  color: rgba(230, 245, 250, 0.54);
+}
+
+body.beta-page .field select {
+  appearance: none;
+}
+
+body.beta-page .field input:focus-visible,
+body.beta-page .field select:focus-visible,
+body.beta-page .field textarea:focus-visible {
+  outline: 3px solid rgba(102, 224, 197, 0.45);
+  outline-offset: 2px;
+}
+
+body.beta-page .field[data-invalid="true"] input,
+body.beta-page .field[data-invalid="true"] select,
+body.beta-page .field[data-invalid="true"] textarea {
+  border-color: rgba(255, 117, 117, 0.62);
+  box-shadow: 0 0 0 1px rgba(255, 117, 117, 0.16);
+}
+
+body.beta-page .field__error {
+  min-height: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--off-text);
+}
+
+body.beta-page .field--full {
+  grid-column: 1 / -1;
+}
+
+body.beta-page .hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+body.beta-page .feedback-form__note {
+  padding-top: 0.25rem;
+}
+
+body.beta-page .feedback-form__note p {
+  margin: 0;
+}
+
+body.beta-page .form-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 @media (min-width: 720px) {
   .page-shell {
     width: min(1120px, calc(100% - 2rem));
@@ -479,6 +616,15 @@ main {
   body.beta-page .footer-cta__card .button {
     width: auto;
     min-width: 15rem;
+  }
+
+  body.beta-page .form-actions .button {
+    width: auto;
+    min-width: 15rem;
+  }
+
+  body.beta-page .feedback-form__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-grid {
