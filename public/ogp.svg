@@ -1,41 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">釣り羅針盤 | ベータテスター募集中</title>
-  <desc id="desc">釣行前の計画から釣行後の振り返りまでを支援する、釣り羅針盤のOGP画像。</desc>
+  <title id="title">FUKASE LAB | フカセ釣りでメジナを狙う楽しさ</title>
+  <desc id="desc">朝夕の海辺でフカセ釣りをする人と、潮の上を流れるウキを描いたOGP画像。</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#071a24" />
-      <stop offset="55%" stop-color="#0c2d3d" />
-      <stop offset="100%" stop-color="#114a63" />
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#143746" />
+      <stop offset="56%" stop-color="#6b8f96" />
+      <stop offset="100%" stop-color="#e3b16c" />
     </linearGradient>
-    <radialGradient id="glowA" cx="28%" cy="18%" r="72%">
-      <stop offset="0%" stop-color="#66e0c5" stop-opacity="0.34" />
-      <stop offset="100%" stop-color="#66e0c5" stop-opacity="0" />
-    </radialGradient>
-    <radialGradient id="glowB" cx="82%" cy="24%" r="62%">
-      <stop offset="0%" stop-color="#53b7ff" stop-opacity="0.28" />
-      <stop offset="100%" stop-color="#53b7ff" stop-opacity="0" />
-    </radialGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#276276" />
+      <stop offset="100%" stop-color="#071a29" />
+    </linearGradient>
+    <linearGradient id="shade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#06141f" stop-opacity=".93" />
+      <stop offset="70%" stop-color="#06141f" stop-opacity=".57" />
+      <stop offset="100%" stop-color="#06141f" stop-opacity="0" />
+    </linearGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)" />
-  <circle cx="170" cy="130" r="260" fill="url(#glowA)" />
-  <circle cx="1010" cy="150" r="230" fill="url(#glowB)" />
-  <path d="M0 510 C180 470, 260 560, 430 525 S700 455, 830 490 S1040 555, 1200 505 L1200 630 L0 630 Z" fill="#06131a" fill-opacity="0.28" />
-  <path d="M70 465 C170 425, 260 500, 350 465 S520 410, 620 440 S790 505, 925 470 S1080 405, 1170 435" fill="none" stroke="#66e0c5" stroke-opacity="0.34" stroke-width="5" stroke-linecap="round" />
-  <path d="M70 493 C180 455, 280 528, 378 494 S545 438, 650 470 S820 535, 950 500 S1085 440, 1170 470" fill="none" stroke="#53b7ff" stroke-opacity="0.26" stroke-width="3" stroke-linecap="round" />
+  <rect width="1200" height="630" fill="url(#sky)" />
+  <circle cx="942" cy="126" r="75" fill="#ffe0a2" fill-opacity=".78" />
+  <path d="M0 292 C116 235 241 284 350 247 S585 218 733 262 S1026 279 1200 214 L1200 354 L0 354Z" fill="#234658" fill-opacity=".78" />
+  <path d="M0 342 C174 303 274 367 416 333 S659 297 815 337 S1032 360 1200 303 L1200 630 L0 630Z" fill="url(#sea)" />
+  <path d="M0 390 C171 349 285 416 449 377 S758 347 921 391 S1065 410 1200 369 M0 475 C161 432 282 499 463 459 S744 436 905 475 S1059 492 1200 447 M0 561 C192 515 315 583 484 544 S774 524 961 561 S1083 572 1200 539" fill="none" stroke="#b7ded4" stroke-opacity=".48" stroke-width="5" stroke-linecap="round" />
+  <path d="M0 535 L121 501 L205 526 L282 482 L371 527 L443 490 L524 530 L620 483 L703 529 L806 477 L914 526 L1034 487 L1200 522 L1200 630 L0 630Z" fill="#06131a" />
 
-  <g transform="translate(72 92)">
-    <rect x="0" y="0" rx="999" ry="999" width="250" height="52" fill="#66e0c5" fill-opacity="0.92" />
-    <text x="28" y="34" fill="#08261f" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="24" font-weight="800">ベータテスター募集中</text>
+  <g transform="translate(807 177)">
+    <circle cx="0" cy="0" r="30" fill="#071119" />
+    <path d="M-25 33 L-48 143 L-10 143 L0 79 L13 143 L51 143 L26 36 L15 25 L-16 25Z" fill="#071119" />
+    <path d="M6 43 L103 85 L194 -1" fill="none" stroke="#071119" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M103 84 L353 -150" fill="none" stroke="#071119" stroke-width="6" stroke-linecap="round" />
+    <path d="M349 -145 C351 -31 326 114 293 244" fill="none" stroke="#f7e6bd" stroke-opacity=".88" stroke-width="2" />
+    <ellipse cx="291" cy="252" rx="10" ry="17" fill="#e66c56" />
+    <path d="M258 275 C274 256 290 263 306 270 C324 278 337 290 329 302 C311 314 285 307 267 299 C257 294 253 284 258 275Z" fill="#aec7bd" />
+    <path d="M329 290 L349 276 L345 300Z" fill="#aec7bd" />
   </g>
 
-  <text x="72" y="238" fill="#eef7fb" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="88" font-weight="800" letter-spacing="-2">釣り羅針盤</text>
-  <text x="72" y="314" fill="#d6eef6" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">釣行前の計画から、釣行中の記録、釣行後の振り返りまで。</text>
-  <text x="72" y="360" fill="#d6eef6" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">釣りをもっと楽しく、もっと記録できる釣行支援アプリ。</text>
-
-  <g transform="translate(72 408)">
-    <rect x="0" y="0" rx="26" ry="26" width="404" height="114" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.14" />
-    <text x="28" y="44" fill="#eef7fb" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="22" font-weight="700">現在ベータテスターを募集中です。</text>
-    <text x="28" y="76" fill="#bfe9dd" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="600">釣行計画・記録・釣果管理・振り返りをお試しいただけます。</text>
+  <rect width="1200" height="630" fill="url(#shade)" />
+  <g transform="translate(74 73)">
+    <text x="0" y="0" fill="#b7ded4" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="25" font-weight="800" letter-spacing="4">FUKASE LAB / MEJINA</text>
+    <text x="0" y="108" fill="#f4fbfd" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="72" font-weight="800" letter-spacing="-2">潮を読み、仕掛けを流し、</text>
+    <text x="0" y="195" fill="#f4fbfd" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="72" font-weight="800" letter-spacing="-2">メジナに近づく。</text>
+    <text x="2" y="256" fill="#d8e8e9" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">フカセ釣りの観察、試行錯誤、記録、振り返りを通じて、</text>
+    <text x="2" y="297" fill="#d8e8e9" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">釣りの楽しさを深める。</text>
+    <rect x="0" y="351" width="385" height="58" rx="29" fill="#b7ded4" />
+    <text x="28" y="389" fill="#071a24" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="24" font-weight="800">釣り羅針盤 ベータテスター募集中</text>
   </g>
 </svg>

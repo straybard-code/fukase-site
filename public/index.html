@@ -3,183 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>釣り羅針盤｜ベータテスター募集中</title>
-  <meta name="description" content="釣り羅針盤は、釣行前の計画から釣行中の記録、釣行後の振り返りまでをサポートする釣行支援アプリです。現在、ベータテスターを募集しています。">
+  <title>FUKASE LAB｜フカセ釣りでメジナを狙う楽しさ</title>
+  <meta name="description" content="潮を読み、仕掛けを流し、メジナを狙う。FUKASE LABは、フカセ釣りの観察、試行錯誤、記録、振り返りを通じて、釣りの楽しさを深めるためのサイトです。釣行支援アプリ「釣り羅針盤」のベータテスターも募集しています。">
   <meta name="theme-color" content="#071a24">
   <link rel="canonical" href="https://fukase-lab.com/">
-  <meta property="og:title" content="釣り羅針盤｜ベータテスター募集中">
-  <meta property="og:description" content="釣り羅針盤は、釣行前の計画から釣行中の記録、釣行後の振り返りまでをサポートする釣行支援アプリです。現在、ベータテスターを募集しています。">
+  <meta property="og:title" content="FUKASE LAB｜フカセ釣りでメジナを狙う楽しさ">
+  <meta property="og:description" content="潮を読み、仕掛けを流し、メジナを狙う。フカセ釣りの観察、試行錯誤、記録、振り返りを通じて、釣りの楽しさを深めるためのサイトです。">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fukase-lab.com/">
   <meta property="og:image" content="https://fukase-lab.com/ogp.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="釣り羅針盤">
+  <meta property="og:site_name" content="FUKASE LAB">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="釣り羅針盤｜ベータテスター募集中">
-  <meta name="twitter:description" content="釣り羅針盤は、釣行前の計画から釣行中の記録、釣行後の振り返りまでをサポートする釣行支援アプリです。現在、ベータテスターを募集しています。">
+  <meta name="twitter:title" content="FUKASE LAB｜フカセ釣りでメジナを狙う楽しさ">
+  <meta name="twitter:description" content="潮を読み、仕掛けを流し、メジナを狙う。フカセ釣りの観察、試行錯誤、記録、振り返りを通じて、釣りの楽しさを深めるためのサイトです。">
   <meta name="twitter:image" content="https://fukase-lab.com/ogp.svg">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="beta-page home-page">
+<body class="beta-page home-page fishing-home-page">
   <div class="page-shell">
-    <header class="hero hero--primary">
-      <div class="eyebrow-row">
-        <span class="eyebrow eyebrow--soft">ベータテスター募集</span>
-        <span class="eyebrow">公開中</span>
+    <header class="hero hero--fishing">
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a class="site-nav__brand" href="/" aria-label="FUKASE LAB トップ">FUKASE LAB</a>
+        <div class="site-nav__links">
+          <a href="#fukase">フカセ釣りの魅力</a>
+          <a href="#mejina">メジナ釣り</a>
+          <a href="#record">釣行記録</a>
+          <a href="#compass">釣り羅針盤</a>
+          <a href="#beta">ベータテスター募集</a>
+        </div>
+      </nav>
+
+      <div class="hero--fishing__layout">
+        <div class="hero--fishing__content">
+          <p class="section-kicker">FUKASE FISHING / MEJINA</p>
+          <h1>潮を読み、<br>仕掛けを流し、<br>メジナに近づく。</h1>
+          <p class="hero-copy">
+            フカセ釣りは、海の変化を感じながら、コマセ、付けエサ、仕掛け、タナを組み立てていく釣りです。<br><br>
+            答えが見えないからこそ、一尾にたどり着いた瞬間が面白い。
+          </p>
+          <p class="hero-note">FUKASE LABは、フカセ釣りでメジナを釣る楽しさを、実釣、記録、振り返りを通じて深めていくための場所です。</p>
+          <div class="hero-actions">
+            <a class="button button--primary" href="https://app.fukase-lab.com">釣り羅針盤のベータテスターに応募する</a>
+            <a class="button button--secondary" href="#fukase">フカセ釣りの楽しさを見る</a>
+          </div>
+        </div>
+
+        <div class="hero-scene" aria-hidden="true">
+          <svg viewBox="0 0 620 560" role="presentation" focusable="false">
+            <defs>
+              <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8ab8c6" />
+                <stop offset="60%" stop-color="#d9bc8d" />
+                <stop offset="100%" stop-color="#f0d2a0" />
+              </linearGradient>
+              <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#205a70" />
+                <stop offset="100%" stop-color="#071f31" />
+              </linearGradient>
+            </defs>
+            <rect width="620" height="560" fill="url(#sky)" />
+            <circle cx="466" cy="118" r="52" fill="#fff0bf" fill-opacity=".72" />
+            <path d="M0 272 C82 223 146 280 227 250 S388 220 456 252 S555 257 620 220 L620 342 L0 342Z" fill="#315567" fill-opacity=".72" />
+            <path d="M0 317 C103 287 159 331 248 307 S402 286 490 310 S562 322 620 294 L620 560 L0 560Z" fill="url(#water)" />
+            <path d="M0 357 C94 329 162 381 258 353 S435 330 620 375 M0 423 C116 390 190 445 305 409 S471 394 620 433 M0 494 C118 465 215 517 334 482 S502 470 620 504" fill="none" stroke="#b7ded4" stroke-opacity=".48" stroke-width="4" />
+            <path d="M0 454 L104 430 L151 451 L211 420 L270 449 L333 419 L389 456 L457 414 L518 455 L620 425 L620 560 L0 560Z" fill="#07151d" />
+            <path d="M158 418 L190 418 L198 338 L217 271 L231 271 L244 339 L260 418 L286 418 L266 331 L246 251 L204 251 L184 331Z" fill="#091219" />
+            <circle cx="224" cy="225" r="24" fill="#091219" />
+            <path d="M229 269 L300 304 L351 245" fill="none" stroke="#091219" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M305 304 L489 116" fill="none" stroke="#0b1620" stroke-width="5" stroke-linecap="round" />
+            <path d="M228 273 L179 322" fill="none" stroke="#091219" stroke-width="12" stroke-linecap="round" />
+            <path d="M483 122 L512 95" fill="none" stroke="#0b1620" stroke-width="4" />
+            <path d="M493 111 L526 123" fill="none" stroke="#0b1620" stroke-width="4" />
+            <path d="M491 121 C493 217 469 291 450 360" fill="none" stroke="#f4eac8" stroke-opacity=".78" stroke-width="2" />
+            <ellipse cx="448" cy="369" rx="9" ry="15" fill="#f06f59" />
+            <path d="M418 386 C430 373 443 379 455 383 C470 389 479 398 473 406 C459 414 439 410 425 404 C418 400 415 393 418 386Z" fill="#b7c8be" />
+            <path d="M473 397 L486 388 L483 403Z" fill="#b7c8be" />
+          </svg>
+          <p>海を見て、次の一投を考える。</p>
+        </div>
       </div>
-      <h1>釣り羅針盤</h1>
-      <p class="hero-copy">
-        釣行前の計画から、釣行中の記録、釣行後の振り返りまで。<br>
-        釣りをもっと楽しく、もっと記録できる釣行支援アプリ。
-      </p>
-      <p class="hero-status">
-        <span class="state-badge state-badge--available">現在ベータテスターを募集中です。</span>
-      </p>
-      <div class="hero-actions">
-        <a class="button button--primary" href="https://app.fukase-lab.com">ベータテスターに応募する</a>
-        <a class="button button--secondary" href="#features">ベータ版で利用できる機能を見る</a>
-      </div>
-      <p class="hero-note">現在、釣り羅針盤のベータテスターを募集しています。</p>
     </header>
 
     <main>
-      <section class="section" id="about">
+      <section class="section section--story" id="fukase">
         <div class="section-heading">
-          <p class="section-kicker">ABOUT</p>
-          <h2>ベータ版について</h2>
+          <p class="section-kicker">THE APPEAL</p>
+          <h2>フカセ釣りは、海との対話だ。</h2>
         </div>
-        <div class="info-card">
-          <p>
-            現在公開しているベータ版では、<br>
-            釣行計画、釣行記録、釣果管理、釣行後の振り返りなどの基本機能をお試しいただけます。
-          </p>
-          <p>
-            AI機能や一部の高度な機能は現在利用できません。
-          </p>
+        <div class="story-layout">
+          <div class="story-copy">
+            <p>潮の速さ、向き、風、波、付けエサの残り方、コマセへの反応。</p>
+            <p>目に見える変化と、見えない海中の状況を少しずつつなぎ合わせながら、魚のいる場所と食う条件を探していく。</p>
+            <p>同じ場所、同じ仕掛けでも、昨日の正解が今日の正解とは限りません。その不確かさが、フカセ釣りを何度でも面白くします。</p>
+          </div>
+          <div class="feature-grid feature-grid--four fishing-points">
+            <article class="feature-card fishing-point">
+              <span class="fishing-point__number">01</span>
+              <h3>潮を読む</h3>
+              <p>海面と仕掛けの動きから、潮の変化をつかむ。</p>
+            </article>
+            <article class="feature-card fishing-point">
+              <span class="fishing-point__number">02</span>
+              <h3>タナを探る</h3>
+              <p>魚のいる層を想像し、少しずつ合わせていく。</p>
+            </article>
+            <article class="feature-card fishing-point">
+              <span class="fishing-point__number">03</span>
+              <h3>エサを合わせる</h3>
+              <p>コマセと付けエサの関係を、反応から読み取る。</p>
+            </article>
+            <article class="feature-card fishing-point">
+              <span class="fishing-point__number">04</span>
+              <h3>次の一手を考える</h3>
+              <p>一尾の結果から、次の仕掛けと流し方を組み立てる。</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="features">
-        <div class="section-heading">
-          <p class="section-kicker">FEATURES</p>
-          <h2>ベータ版で利用できる主な機能</h2>
-          <p class="section-copy">
-            ベータ版でお試しいただける主な機能をまとめています。
-          </p>
+      <section class="section section--mejina" id="mejina">
+        <div class="mejina-art" aria-hidden="true">
+          <svg viewBox="0 0 280 170" role="presentation" focusable="false">
+            <path d="M28 85 C69 34 169 22 229 60 C247 71 253 86 252 91 C242 110 205 132 155 139 C98 146 55 126 28 85Z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="3" />
+            <path d="M229 60 L270 28 L258 82 L278 126 L229 109Z" fill="currentColor" fill-opacity=".18" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="187" cy="66" r="5" fill="currentColor" />
+            <path d="M87 54 C109 70 133 76 158 78 M73 81 C107 94 146 98 185 91 M76 108 C104 115 131 119 159 116" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="3" stroke-linecap="round" />
+          </svg>
         </div>
-        <div class="feature-grid feature-grid--three">
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>釣行計画</h3>
-            <p>釣行前の準備や行程を整理しやすくします。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>釣行中の記録</h3>
-            <p>現地での気づきやメモをその場で残せます。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>釣果管理</h3>
-            <p>釣果の記録と整理をしやすくします。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>釣行履歴</h3>
-            <p>これまでの釣行を一覧で振り返れます。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>オフライン利用</h3>
-            <p>通信環境が不安定な場所でも使いやすくしています。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--available">利用できます</span>
-            <h3>データ同期</h3>
-            <p>記録した内容を端末間で扱いやすくします。</p>
-          </article>
+        <div class="section-heading">
+          <p class="section-kicker">TARGET</p>
+          <h2>狙うのは、メジナ。</h2>
+          <p class="section-copy">メジナは、潮、タナ、エサの入り方に敏感で、状況に合わせた組み立てが釣果に表れやすい魚です。</p>
+        </div>
+        <div class="info-card info-card--plain">
+          <p>小さな変化を読み、仮説を立て、仕掛けを調整する。その積み重ねの先にある一尾は、偶然だけでは終わらない喜びがあります。</p>
         </div>
       </section>
 
-      <section class="section" id="unavailable">
+      <section class="section" id="flow">
         <div class="section-heading">
-          <p class="section-kicker">NOT AVAILABLE</p>
-          <h2>ベータ版で利用できない機能</h2>
-          <p class="section-copy">
-            AI機能を含む一部の機能は、現在利用できません。
-          </p>
+          <p class="section-kicker">ON THE WATER</p>
+          <h2>一投ごとに、海から答えを受け取る。</h2>
+          <p class="section-copy">これはアプリの操作手順ではなく、釣り人が海辺で繰り返す思考と行動の流れです。</p>
         </div>
-        <div class="feature-grid feature-grid--three">
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>AI釣行計画</h3>
-            <p>現在利用できません。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>AIレビュー</h3>
-            <p>現在利用できません。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>AIリコメンド</h3>
-            <p>現在利用できません。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>海底図解析</h3>
-            <p>現在利用できません。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>Apple Watch連携</h3>
-            <p>現在利用できません。</p>
-          </article>
-          <article class="feature-card">
-            <span class="state-badge state-badge--unavailable">現在利用できません</span>
-            <h3>データエクスポート</h3>
-            <p>現在利用できません。</p>
-          </article>
+        <div class="journey-flow journey-flow--fishing" aria-label="フカセ釣りの流れ">
+          <article class="journey-step"><span class="journey-step__number">01</span><h3>海を見る</h3><p>潮目、風、波立ちを観察する。</p></article>
+          <div class="journey-arrow" aria-hidden="true">↓</div>
+          <article class="journey-step"><span class="journey-step__number">02</span><h3>反応を見る</h3><p>潮と魚の反応を確かめる。</p></article>
+          <div class="journey-arrow" aria-hidden="true">↓</div>
+          <article class="journey-step"><span class="journey-step__number">03</span><h3>調整する</h3><p>仕掛けとタナを組み立て直す。</p></article>
+          <div class="journey-arrow" aria-hidden="true">↓</div>
+          <article class="journey-step"><span class="journey-step__number">04</span><h3>確かめる</h3><p>結果から次の一投を考える。</p></article>
         </div>
       </section>
 
-      <section class="section" id="development">
+      <section class="section section--record" id="record">
         <div class="section-heading">
-          <p class="section-kicker">DEVELOPMENT</p>
-          <h2>開発について</h2>
+          <p class="section-kicker">KEEP THE CLUES</p>
+          <h2>釣れた日も、釣れなかった日も、次の材料になる。</h2>
         </div>
-        <div class="info-card">
-          <p>
-            釣り羅針盤は、実際の釣行を通じて改善を続けている釣行支援アプリです。
-          </p>
-          <p>
-            ベータ版では、基本的な操作性や記録フローを検証しながら、より使いやすいアプリへ育てていきます。
-          </p>
+        <div class="record-layout">
+          <div class="info-card">
+            <p>その日の潮、風、タナ、付けエサの状態、仕掛け変更、魚の反応。</p>
+            <p>記憶だけでは曖昧になる情報も、記録して振り返ることで、次の釣行で試すべきことが見えやすくなります。</p>
+          </div>
+          <aside class="record-note">
+            <p>記録は、正解を決めるためではなく、自分の観察を次回へ残すために。</p>
+          </aside>
         </div>
       </section>
 
-      <section class="section" id="support">
+      <section class="section section--compass" id="compass">
         <div class="section-heading">
-          <p class="section-kicker">SUPPORT</p>
-          <h2>ご協力のお願い</h2>
+          <p class="section-kicker">FISHING COMPASS</p>
+          <h2>フカセ釣りの記録を、次の一投へ。</h2>
+          <p class="section-copy">釣り羅針盤は、釣行前の計画、釣行中の記録、釣果の整理、釣行後の振り返りをひとつにつなぐ釣行支援アプリです。</p>
         </div>
-        <div class="info-card">
-          <p>
-            ベータ版をご利用いただいた皆さまからのご意見・ご要望は、今後の改善に活用させていただきます。
-          </p>
+        <div class="compass-layout">
+          <div class="info-card">
+            <p>魚を釣るための答えを代わりに出すのではなく、自分で観察し、考え、試した内容を残しやすくすることを目的としています。</p>
+          </div>
+          <ul class="compass-list">
+            <li>フカセ釣りの観察を残す</li>
+            <li>仕掛け変更を記録する</li>
+            <li>釣果と条件を結びつける</li>
+            <li>釣行後に振り返る</li>
+            <li>次回試すことを整理する</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--beta" id="beta">
+        <div class="section-heading">
+          <p class="section-kicker">BETA TESTER</p>
+          <h2>釣り羅針盤 ベータテスター募集中</h2>
+          <p class="section-copy">現在、釣り羅針盤の基本的な操作性や、実際の釣行での記録フローを検証するベータテスターを募集しています。</p>
+        </div>
+        <div class="beta-layout">
+          <div class="info-card">
+            <p>ベータ版では、釣行計画の作成・保存、釣行中の記録、仕掛け変更の記録、釣果管理、釣行履歴、釣行後の振り返り、オフラインでの一時保存、データ同期をご利用いただけます。</p>
+            <p>現在のベータ版では、AI計画、AIレビュー、AIリコメンドは利用できません。</p>
+          </div>
+          <div class="hero-actions hero-actions--stacked">
+            <a class="button button--primary" href="https://app.fukase-lab.com">釣り羅針盤のベータテスターに応募する</a>
+            <a class="button button--secondary" href="/beta/">ベータ版の詳細を見る</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--feedback" id="feedback">
+        <div class="section-heading">
+          <p class="section-kicker">YOUR VOICE</p>
+          <h2>フカセ釣りや釣り羅針盤について、声をお聞かせください。</h2>
+          <p class="section-copy">釣り羅針盤へのご意見、ご要望、ご感想、作者への激励も歓迎しています。</p>
+        </div>
+        <div class="info-card info-card--plain">
+          <p>ベータテスターへの応募とは別に、意見送信フォームをご用意しています。</p>
           <div class="hero-actions hero-actions--compact">
-            <a class="button button--secondary" href="/beta/register/">ご意見・ご要望を送る</a>
+            <a class="button button--secondary" href="/beta/register/#feedback">ご意見・ご要望を送る</a>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="footer-cta">
-      <div class="footer-cta__card">
+      <div class="footer-cta__card footer-cta__card--fishing">
         <div class="section-heading">
-          <p class="section-kicker">FOOTER</p>
-          <h2>ご案内</h2>
+          <p class="section-kicker">NEXT TRIP</p>
+          <h2>次の釣行を、もっと深く楽しむために。</h2>
+          <p>フカセ釣りの記録と振り返りを、一緒に育てていただけるベータテスターを募集しています。</p>
+        </div>
+        <div class="hero-actions hero-actions--compact">
+          <a class="button button--primary" href="https://app.fukase-lab.com">釣り羅針盤のベータテスターに応募する</a>
         </div>
         <nav class="site-footer-links" aria-label="フッターリンク">
           <a class="site-footer-link" href="/terms/">利用規約</a>
