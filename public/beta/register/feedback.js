@@ -8,12 +8,11 @@
   const submitButton = form.querySelector('button[type="submit"]');
   const nameInput = document.getElementById("feedback-name");
   const emailInput = document.getElementById("feedback-email");
-  const categorySelect = document.getElementById("feedback-category");
+  const subjectSelect = document.getElementById("feedback-subject");
   const messageInput = document.getElementById("feedback-message");
-  const companyInput = document.getElementById("feedback-company");
-  const startedAtInput = document.getElementById("feedback-started-at");
-  const pageVersionInput = document.getElementById("feedback-page-version");
+  const websiteInput = document.getElementById("feedback-website");
   const messageCount = document.getElementById("feedback-message-count");
+  const FEEDBACK_API_URL = form.action;
 
   const fields = {
     name: {
@@ -26,10 +25,10 @@
       error: document.getElementById("feedback-email-error"),
       wrapper: emailInput?.closest(".field"),
     },
-    category: {
-      input: categorySelect,
-      error: document.getElementById("feedback-category-error"),
-      wrapper: categorySelect?.closest(".field"),
+    subject: {
+      input: subjectSelect,
+      error: document.getElementById("feedback-subject-error"),
+      wrapper: subjectSelect?.closest(".field"),
     },
     message: {
       input: messageInput,
@@ -38,14 +37,9 @@
     },
   };
 
-  const defaultCategory = categorySelect ? categorySelect.value : "ご感想";
-  const startedAt = new Date();
-  const maxMessageLength = Number(messageInput?.getAttribute("maxlength") || 2000);
+  const defaultSubject = subjectSelect ? subjectSelect.value : "ご意見・ご要望";
+  const maxMessageLength = Number(messageInput?.getAttribute("maxlength") || 5000);
   let isSubmitting = false;
-
-  if (startedAtInput) {
-    startedAtInput.value = startedAt.toISOString();
-  }
 
   function setStatus(message, state) {
     if (!statusEl) {
@@ -108,40 +102,31 @@
     const errors = {};
     const name = trimValue(nameInput);
     const email = trimValue(emailInput);
-    const category = trimValue(categorySelect);
+    const subject = trimValue(subjectSelect);
     const message = String(messageInput?.value || "").trim();
-    const company = trimValue(companyInput);
-    const startedAtValue = String(startedAtInput?.value || "");
 
-    if (company) {
-      errors._honeypot = true;
-      return { ok: false, errors };
-    }
-
-    if (name.length > 100) {
+    if (!name) {
+      errors.name = "お名前を入力してください。";
+    } else if (name.length > 100) {
       errors.name = "お名前は100文字以内で入力してください。";
     }
 
-    if (email.length > 254) {
+    if (!email) {
+      errors.email = "メールアドレスを入力してください。";
+    } else if (email.length > 254) {
       errors.email = "メールアドレスは254文字以内で入力してください。";
     } else if (!validateEmail(email)) {
       errors.email = "メールアドレスの形式を確認してください。";
     }
 
-    if (!category) {
-      errors.category = "メッセージの種類を選択してください。";
+    if (!subject) {
+      errors.subject = "種別を選択してください。";
     }
 
     if (!message) {
       errors.message = "メッセージを入力してください。";
     } else if (message.length > maxMessageLength) {
-      errors.message = "メッセージは2000文字以内で入力してください。";
-    }
-
-    const formStartedAt = Date.parse(startedAtValue);
-    if (!Number.isFinite(formStartedAt) || Date.now() - formStartedAt < 1000) {
-      errors._timing = true;
-      return { ok: false, errors };
+      errors.message = `メッセージは${maxMessageLength}文字以内で入力してください。`;
     }
 
     return { ok: Object.keys(errors).length === 0, errors };
@@ -151,42 +136,50 @@
     const firstInvalid = form.querySelector('[aria-invalid="true"]');
     if (firstInvalid && typeof firstInvalid.focus === "function") {
       firstInvalid.focus();
+      return;
     }
+
+    nameInput?.focus();
   }
 
   function setSubmitting(nextState) {
     isSubmitting = nextState;
+    form.setAttribute("aria-busy", nextState ? "true" : "false");
     if (submitButton) {
       submitButton.disabled = nextState;
-      submitButton.textContent = nextState ? "送信中…" : "メッセージを送信する";
+      submitButton.setAttribute("aria-busy", nextState ? "true" : "false");
+      submitButton.textContent = nextState ? "送信中..." : "送信する";
     }
+  }
+
+  function getFailureMessage(response, data) {
+    if (data?.message) {
+      return data.message;
+    }
+
+    if (response.status === 400) {
+      return "入力内容を確認してください。";
+    }
+
+    if (response.status === 403) {
+      return "このページからはお問い合わせを送信できません。";
+    }
+
+    if (response.status === 429) {
+      return "送信回数が上限に達しました。時間をおいてから再度お試しください。";
+    }
+
+    return "送信結果を確認できませんでした。時間をおいて再度お試しください。";
   }
 
   function resetAfterSuccess() {
     form.reset();
-    if (categorySelect) {
-      categorySelect.value = defaultCategory;
-    }
-    if (startedAtInput) {
-      startedAtInput.value = new Date().toISOString();
+    if (subjectSelect) {
+      subjectSelect.value = defaultSubject;
     }
     clearFieldErrors();
     clearStatus();
     updateMessageCount();
-  }
-
-  function applyServerErrors(fieldErrors) {
-    clearFieldErrors();
-
-    if (!fieldErrors) {
-      return;
-    }
-
-    Object.entries(fieldErrors).forEach(([key, value]) => {
-      if (fields[key]) {
-        setFieldError(key, value);
-      }
-    });
   }
 
   messageInput?.addEventListener("input", () => {
@@ -203,8 +196,8 @@
     setFieldError("email", "");
   });
 
-  categorySelect?.addEventListener("change", () => {
-    setFieldError("category", "");
+  subjectSelect?.addEventListener("change", () => {
+    setFieldError("subject", "");
   });
 
   updateMessageCount();
@@ -221,19 +214,19 @@
     clearStatus();
     clearFieldErrors();
 
+    if (nameInput) nameInput.value = trimValue(nameInput);
+    if (emailInput) emailInput.value = trimValue(emailInput);
+    if (subjectSelect) subjectSelect.value = trimValue(subjectSelect);
+    if (messageInput) messageInput.value = String(messageInput.value || "").trim();
+
     const validation = validate();
     if (!validation.ok) {
       if (validation.errors.name) setFieldError("name", validation.errors.name);
       if (validation.errors.email) setFieldError("email", validation.errors.email);
-      if (validation.errors.category) setFieldError("category", validation.errors.category);
+      if (validation.errors.subject) setFieldError("subject", validation.errors.subject);
       if (validation.errors.message) setFieldError("message", validation.errors.message);
 
-      if (validation.errors._honeypot || validation.errors._timing) {
-        setStatus("メッセージを送信できませんでした。時間をおいて、もう一度お試しください。", "error");
-      } else {
-        setStatus("入力内容をご確認ください。", "error");
-      }
-
+      setStatus("入力内容をご確認ください。", "error");
       focusFirstInvalidField();
       return;
     }
@@ -241,50 +234,48 @@
     const payload = {
       name: trimValue(nameInput),
       email: trimValue(emailInput),
-      category: trimValue(categorySelect),
+      subject: trimValue(subjectSelect),
       message: String(messageInput?.value || "").trim(),
-      sourcePage: window.location.href,
-      pageVersion: pageVersionInput?.value || "beta-register",
-      submittedAt: new Date().toISOString(),
-      browser: navigator.userAgent || "",
-      formStartedAt: startedAtInput?.value || "",
+      source: "landing-page",
+      website: websiteInput?.value || "",
     };
-
-    if (companyInput) {
-      payload.company = companyInput.value || "";
-    }
 
     setSubmitting(true);
     setStatus("送信中…", "");
 
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(FEEDBACK_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Accept": "application/json",
         },
         body: JSON.stringify(payload),
       });
 
       const data = await response.json().catch(() => null);
 
-      if (!response.ok || !data?.ok) {
-        if (response.status === 400 && data?.fieldErrors) {
-          applyServerErrors(data.fieldErrors);
-          setStatus("入力内容をご確認ください。", "error");
+      if (!response.ok || !data?.success) {
+        console.error("[feedback-submit-error]", {
+          httpStatus: response.status,
+          errorCode: data?.errorCode || null,
+          requestId: data?.requestId || null,
+        });
+        setStatus(getFailureMessage(response, data), "error");
+        if (response.status === 400) {
           focusFirstInvalidField();
-          return;
         }
-
-        setStatus("メッセージを送信できませんでした。時間をおいて、もう一度お試しください。", "error");
         return;
       }
 
       resetAfterSuccess();
-      setStatus("メッセージを送信しました。釣り羅針盤へのご意見をありがとうございます。", "success");
+      setStatus(data.message || "お問い合わせを受け付けました。", "success");
     } catch (error) {
-      setStatus("メッセージを送信できませんでした。時間をおいて、もう一度お試しください。", "error");
+      console.error("[feedback-submit-error]", {
+        httpStatus: null,
+        errorCode: null,
+        requestId: null,
+      });
+      setStatus("送信に失敗しました。通信状態を確認して、時間をおいて再度お試しください。", "error");
     } finally {
       setSubmitting(false);
     }

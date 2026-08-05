@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>釣り羅針盤｜ベータテスター応募</title>
   <meta name="description" content="釣り羅針盤のベータテスター応募ページです。応募後、利用方法をご案内します。">
-  <meta name="fukase-page-version" content="beta-register-2026-08-05">
+  <meta name="fukase-page-version" content="beta-register-2026-08-05-2">
   <link rel="canonical" href="/beta/register/">
   <link rel="stylesheet" href="../../style.css">
 </head>
@@ -71,27 +71,29 @@
         </div>
 
         <div class="info-card">
-          <form class="feedback-form" id="feedback-form" action="/api/feedback" method="post" novalidate>
+          <form class="feedback-form" id="feedback-form" action="https://app.fukase-lab.com/api/feedback" method="post" novalidate>
             <p class="feedback-form__intro">こちらはベータテスター応募とは別のフォームです。</p>
 
             <div class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
 
             <div class="feedback-form__grid">
               <div class="field">
-                <label class="field__label" for="feedback-name">お名前 <span class="field__badge">任意</span></label>
+                <label class="field__label" for="feedback-name">お名前 <span class="field__badge">必須</span></label>
                 <input
                   id="feedback-name"
                   name="name"
                   type="text"
                   maxlength="100"
                   autocomplete="name"
+                  required
+                  aria-describedby="feedback-name-help feedback-name-error"
                 >
-                <p class="field__help" id="feedback-name-help">任意</p>
+                <p class="field__help" id="feedback-name-help">100文字まで入力できます。</p>
                 <p class="field__error" id="feedback-name-error" aria-live="polite"></p>
               </div>
 
               <div class="field">
-                <label class="field__label" for="feedback-email">メールアドレス</label>
+                <label class="field__label" for="feedback-email">メールアドレス <span class="field__badge">必須</span></label>
                 <input
                   id="feedback-email"
                   name="email"
@@ -99,22 +101,24 @@
                   maxlength="254"
                   autocomplete="email"
                   inputmode="email"
+                  required
+                  aria-describedby="feedback-email-help feedback-email-error"
                 >
-                <p class="field__help" id="feedback-email-help">返信を希望される場合のみご入力ください</p>
+                <p class="field__help" id="feedback-email-help">返信先として使用します。</p>
                 <p class="field__error" id="feedback-email-error" aria-live="polite"></p>
               </div>
 
               <div class="field field--full">
-                <label class="field__label" for="feedback-category">メッセージの種類</label>
-                <select id="feedback-category" name="category">
-                  <option value="ご意見">ご意見</option>
-                  <option value="ご要望">ご要望</option>
-                  <option value="ご感想" selected>ご感想</option>
-                  <option value="不具合・使いにくかった点">不具合・使いにくかった点</option>
+                <label class="field__label" for="feedback-subject">種別 <span class="field__badge">必須</span></label>
+                <select id="feedback-subject" name="subject" required aria-describedby="feedback-subject-error">
+                  <option value="ご意見・ご要望" selected>ご意見・ご要望</option>
+                  <option value="ご感想">ご感想</option>
+                  <option value="不具合のご連絡">不具合のご連絡</option>
+                  <option value="ベータテストについて">ベータテストについて</option>
                   <option value="作者への激励">作者への激励</option>
                   <option value="その他">その他</option>
                 </select>
-                <p class="field__error" id="feedback-category-error" aria-live="polite"></p>
+                <p class="field__error" id="feedback-subject-error" aria-live="polite"></p>
               </div>
 
               <div class="field field--full">
@@ -123,31 +127,28 @@
                   id="feedback-message"
                   name="message"
                   rows="8"
-                  maxlength="2000"
+                  maxlength="5000"
                   required
                   placeholder="釣り羅針盤について感じたこと、追加してほしい機能、使いにくかった点、作者へのメッセージなどをご記入ください。"
                   aria-describedby="feedback-message-help feedback-message-count feedback-message-error"
                 ></textarea>
-                <p class="field__help" id="feedback-message-help">1文字以上、2000文字まで入力できます。</p>
-                <p class="field__meta" id="feedback-message-count">0 / 2000 文字</p>
+                <p class="field__help" id="feedback-message-help">1文字以上、5000文字まで入力できます。</p>
+                <p class="field__meta" id="feedback-message-count">0 / 5000 文字</p>
                 <p class="field__error" id="feedback-message-error" aria-live="polite"></p>
               </div>
             </div>
 
             <div class="hp-field" aria-hidden="true">
-              <label for="feedback-company">会社名</label>
-              <input id="feedback-company" name="company" type="text" tabindex="-1" autocomplete="off">
+              <label for="feedback-website">ウェブサイト</label>
+              <input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
             </div>
-
-            <input id="feedback-started-at" name="started_at" type="hidden" value="">
-            <input id="feedback-page-version" name="page_version" type="hidden" value="beta-register-2026-08-05">
 
             <div class="feedback-form__note">
               <p>ご入力いただいた情報は、内容の確認や必要に応じた返信のために利用します。</p>
             </div>
 
             <div class="form-actions">
-              <button class="button button--primary" type="submit">メッセージを送信する</button>
+              <button class="button button--primary" type="submit" aria-busy="false">送信する</button>
             </div>
           </form>
         </div>
