@@ -756,6 +756,10 @@ body.beta-page .form-actions {
 }
 
 .hero--fishing {
+  --text: #f5fbfc;
+  --muted: rgba(231, 244, 247, 0.86);
+  --border: rgba(218, 240, 244, 0.24);
+  --ink: #05131a;
   position: relative;
   overflow: hidden;
   padding: 1rem;
@@ -827,9 +831,19 @@ body.beta-page .form-actions {
   padding: 2.35rem 0.35rem 0.35rem;
 }
 
+.hero--fishing__content {
+  padding: 1.1rem;
+  border: 1px solid rgba(218, 240, 244, 0.14);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(2, 14, 22, 0.76), rgba(2, 14, 22, 0.42));
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
 .hero--fishing h1 {
   max-width: 11ch;
+  color: #ffffff;
   font-size: clamp(2.45rem, 8.2vw, 5.1rem);
+  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.72);
   text-wrap: balance;
 }
 
@@ -917,6 +931,9 @@ body.beta-page .form-actions {
 }
 
 .section--mejina {
+  --text: #f5fbfc;
+  --muted: rgba(231, 244, 247, 0.88);
+  --border: rgba(218, 240, 244, 0.22);
   position: relative;
   overflow: hidden;
   padding: clamp(1.5rem, 4vw, 3.2rem);
@@ -1031,6 +1048,10 @@ body.beta-page .form-actions {
     align-items: center;
     min-height: 32rem;
     padding: 3.5rem 1rem 1rem;
+  }
+
+  .hero--fishing__content {
+    padding: 1.5rem;
   }
 
   .hero-scene {
