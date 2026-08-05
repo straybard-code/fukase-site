@@ -273,6 +273,14 @@ body.beta-page .button[disabled] {
   max-width: 56rem;
 }
 
+.hero-status {
+  margin-top: 1rem;
+}
+
+.hero-status .state-badge {
+  font-size: 0.82rem;
+}
+
 main {
   display: grid;
   gap: 1.4rem;
@@ -460,6 +468,37 @@ main {
   display: grid;
   gap: 0.9rem;
   text-align: left;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.site-footer-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+.site-footer-link:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.site-footer-link:focus-visible {
+  outline: 3px solid rgba(102, 224, 197, 0.45);
+  outline-offset: 3px;
 }
 
 body.beta-page .feedback-section {

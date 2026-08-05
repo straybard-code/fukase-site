@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">釣り羅針盤 | ベータテスター募集中</title>
+  <desc id="desc">釣行前の計画から釣行後の振り返りまでを支援する、釣り羅針盤のOGP画像。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071a24" />
+      <stop offset="55%" stop-color="#0c2d3d" />
+      <stop offset="100%" stop-color="#114a63" />
+    </linearGradient>
+    <radialGradient id="glowA" cx="28%" cy="18%" r="72%">
+      <stop offset="0%" stop-color="#66e0c5" stop-opacity="0.34" />
+      <stop offset="100%" stop-color="#66e0c5" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="82%" cy="24%" r="62%">
+      <stop offset="0%" stop-color="#53b7ff" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#53b7ff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="170" cy="130" r="260" fill="url(#glowA)" />
+  <circle cx="1010" cy="150" r="230" fill="url(#glowB)" />
+  <path d="M0 510 C180 470, 260 560, 430 525 S700 455, 830 490 S1040 555, 1200 505 L1200 630 L0 630 Z" fill="#06131a" fill-opacity="0.28" />
+  <path d="M70 465 C170 425, 260 500, 350 465 S520 410, 620 440 S790 505, 925 470 S1080 405, 1170 435" fill="none" stroke="#66e0c5" stroke-opacity="0.34" stroke-width="5" stroke-linecap="round" />
+  <path d="M70 493 C180 455, 280 528, 378 494 S545 438, 650 470 S820 535, 950 500 S1085 440, 1170 470" fill="none" stroke="#53b7ff" stroke-opacity="0.26" stroke-width="3" stroke-linecap="round" />
+
+  <g transform="translate(72 92)">
+    <rect x="0" y="0" rx="999" ry="999" width="250" height="52" fill="#66e0c5" fill-opacity="0.92" />
+    <text x="28" y="34" fill="#08261f" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="24" font-weight="800">ベータテスター募集中</text>
+  </g>
+
+  <text x="72" y="238" fill="#eef7fb" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="88" font-weight="800" letter-spacing="-2">釣り羅針盤</text>
+  <text x="72" y="314" fill="#d6eef6" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">釣行前の計画から、釣行中の記録、釣行後の振り返りまで。</text>
+  <text x="72" y="360" fill="#d6eef6" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="28" font-weight="600">釣りをもっと楽しく、もっと記録できる釣行支援アプリ。</text>
+
+  <g transform="translate(72 408)">
+    <rect x="0" y="0" rx="26" ry="26" width="404" height="114" fill="#ffffff" fill-opacity="0.08" stroke="#ffffff" stroke-opacity="0.14" />
+    <text x="28" y="44" fill="#eef7fb" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="22" font-weight="700">現在ベータテスターを募集中です。</text>
+    <text x="28" y="76" fill="#bfe9dd" font-family="Hiragino Sans, Yu Gothic, sans-serif" font-size="18" font-weight="600">釣行計画・記録・釣果管理・振り返りをお試しいただけます。</text>
+  </g>
+</svg>
