@@ -105,12 +105,7 @@
     emailInput?.focus();
   }
 
-  function getFailureMessage(response, data) {
-    if (response.status === 400) return data?.message || "入力内容を確認してください。";
-    if (response.status === 403) return "このページから応募を送信できません。時間をおいて再度お試しください。";
-    if (response.status === 429) return "送信回数が上限に達しました。時間をおいて再度お試しください。";
-    return "応募を送信できませんでした。通信状態を確認して、時間をおいて再度お試しください。";
-  }
+  const submitFailureMessage = "応募を送信できませんでした。時間をおいて再度お試しください。";
 
   emailInput?.addEventListener("input", () => {
     setFieldError("email", "");
@@ -164,7 +159,7 @@
       const data = await response.json().catch(() => null);
       if (!response.ok || !data?.ok) {
         console.error("[beta-apply-submit-error]", { httpStatus: response.status });
-        setStatus(getFailureMessage(response, data), "error");
+        setStatus(submitFailureMessage, "error");
         if (response.status === 400) focusFirstInvalidField();
         return;
       }
@@ -179,9 +174,9 @@
         "success"
       );
       statusEl?.focus();
-    } catch (error) {
+    } catch {
       console.error("[beta-apply-submit-error]", { httpStatus: null });
-      setStatus("応募を送信できませんでした。通信状態を確認して、時間をおいて再度お試しください。", "error");
+      setStatus(submitFailureMessage, "error");
     } finally {
       setSubmitting(false);
     }
