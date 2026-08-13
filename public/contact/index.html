@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>釣り羅針盤｜お問い合わせ</title>
-  <meta name="description" content="釣り羅針盤へのお問い合わせ先です。">
+  <title>釣り羅針盤｜お問い合わせ・ご意見ご要望</title>
+  <meta name="description" content="釣り羅針盤へのお問い合わせ、ご意見、ご要望を受け付けています。ベータテスター応募は /beta/apply/ からお送りください。">
   <meta name="theme-color" content="#071a24">
   <link rel="canonical" href="https://fukase-lab.com/contact/">
   <link rel="stylesheet" href="/style.css">
@@ -14,29 +14,122 @@
     <header class="hero hero--primary">
       <div class="eyebrow-row">
         <span class="eyebrow eyebrow--soft">Contact</span>
-        <span class="eyebrow">お問い合わせ</span>
+        <span class="eyebrow">ご意見・ご要望</span>
       </div>
       <h1>お問い合わせ</h1>
-      <p class="hero-copy">ご意見・ご要望は、ベータテスター募集フォームからお送りください。</p>
+      <p class="hero-copy">
+        釣り羅針盤へのご意見、ご要望、ご感想、確認したい点をお送りください。
+        ベータテスター応募は別ページで受け付けています。
+      </p>
       <div class="hero-actions">
-        <a class="button button--primary" href="/beta/register/">ご意見・ご要望を送る</a>
-        <a class="button button--secondary" href="/beta/apply/">ベータテスターに応募する</a>
+        <a class="button button--primary" href="#feedback">お問い合わせフォームへ</a>
+        <a class="button button--secondary" href="/beta/apply/">ベータテスター応募はこちら</a>
       </div>
     </header>
 
     <main>
-      <section class="section">
+      <section class="section feedback-section" id="feedback">
+        <div class="section-heading">
+          <span class="section-kicker">Feedback</span>
+          <h2>釣り羅針盤へのご意見・ご要望</h2>
+          <p class="section-copy">使いにくかった点や追加してほしい機能、作者へのメッセージをお知らせください。</p>
+        </div>
+
         <div class="info-card">
-          <p>ベータ版に関するご質問や気づきは、募集フォームからお知らせください。</p>
+          <form class="feedback-form" id="feedback-form" action="https://app.fukase-lab.com/api/feedback" method="post" novalidate>
+            <p class="feedback-form__intro">こちらはベータテスター応募とは別のフォームです。</p>
+
+            <div class="form-status" id="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
+
+            <div class="feedback-form__grid">
+              <div class="field">
+                <label class="field__label" for="feedback-name">お名前 <span class="field__badge">必須</span></label>
+                <input
+                  id="feedback-name"
+                  name="name"
+                  type="text"
+                  maxlength="100"
+                  autocomplete="name"
+                  required
+                  aria-describedby="feedback-name-help feedback-name-error"
+                >
+                <p class="field__help" id="feedback-name-help">100文字まで入力できます。</p>
+                <p class="field__error" id="feedback-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="feedback-email">メールアドレス <span class="field__badge">必須</span></label>
+                <input
+                  id="feedback-email"
+                  name="email"
+                  type="email"
+                  maxlength="254"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  aria-describedby="feedback-email-help feedback-email-error"
+                >
+                <p class="field__help" id="feedback-email-help">返信先として使用します。</p>
+                <p class="field__error" id="feedback-email-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="feedback-subject">種別 <span class="field__badge">必須</span></label>
+                <select id="feedback-subject" name="subject" required aria-describedby="feedback-subject-error">
+                  <option value="ご意見・ご要望" selected>ご意見・ご要望</option>
+                  <option value="ご感想">ご感想</option>
+                  <option value="不具合のご連絡">不具合のご連絡</option>
+                  <option value="ベータテストについて">ベータテストについて</option>
+                  <option value="作者への激励">作者への激励</option>
+                  <option value="その他">その他</option>
+                </select>
+                <p class="field__error" id="feedback-subject-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="feedback-message">メッセージ <span class="field__badge">必須</span></label>
+                <textarea
+                  id="feedback-message"
+                  name="message"
+                  rows="8"
+                  maxlength="5000"
+                  required
+                  placeholder="釣り羅針盤について感じたこと、追加してほしい機能、使いにくかった点、作者へのメッセージなどをご記入ください。"
+                  aria-describedby="feedback-message-help feedback-message-count feedback-message-error"
+                ></textarea>
+                <p class="field__help" id="feedback-message-help">1文字以上、5000文字まで入力できます。</p>
+                <p class="field__meta" id="feedback-message-count">0 / 5000 文字</p>
+                <p class="field__error" id="feedback-message-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="feedback-website">ウェブサイト</label>
+              <input id="feedback-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+            </div>
+
+            <div class="feedback-form__note">
+              <p>ご入力いただいた情報は、内容の確認や必要に応じた返信のために利用します。</p>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button--primary" type="submit" aria-busy="false">送信する</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
 
     <footer class="footer-cta">
       <div class="footer-cta__card">
-        <a class="button button--secondary" href="/">トップページへ戻る</a>
+        <div class="hero-actions hero-actions--compact">
+          <a class="button button--secondary" href="/beta/">ベータ版の詳細を見る</a>
+          <a class="button button--secondary" href="/">トップページへ戻る</a>
+        </div>
       </div>
     </footer>
   </div>
+
+  <script src="./feedback.js" defer></script>
 </body>
 </html>
