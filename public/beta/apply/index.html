@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>釣り羅針盤｜ベータテスター応募</title>
+  <meta name="description" content="釣行支援アプリ「釣り羅針盤」のベータテスター応募ページです。応募内容を確認後、利用方法をご案内します。">
+  <meta name="theme-color" content="#071a24">
+  <link rel="icon" type="image/png" href="/site-icon.png">
+  <link rel="apple-touch-icon" href="/site-icon.png">
+  <link rel="canonical" href="https://fukase-lab.com/beta/apply/">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="beta-page">
+  <div class="page-shell">
+    <header class="hero hero--secondary">
+      <nav class="site-nav" aria-label="主要ナビゲーション">
+        <a class="site-nav__brand" href="/" aria-label="FUKASE LAB トップ">FUKASE LAB</a>
+        <div class="site-nav__links">
+          <a href="/">トップ</a>
+          <a href="/beta/">ベータ版の詳細</a>
+          <a href="/beta/register/#feedback">ご意見・ご要望</a>
+        </div>
+      </nav>
+
+      <div class="eyebrow-row">
+        <span class="eyebrow">Application</span>
+        <span class="eyebrow eyebrow--soft">ベータテスター募集</span>
+      </div>
+      <h1>ベータテスターに応募する</h1>
+      <p class="hero-copy">
+        釣行支援アプリ「釣り羅針盤」の基本的な操作フローや記録体験を試していただける方を募集しています。
+      </p>
+      <p class="hero-note">
+        応募内容を確認後、承認された方へ利用方法とログイン情報をご案内します。
+      </p>
+    </header>
+
+    <main>
+      <section class="section feedback-section" aria-labelledby="beta-apply-heading">
+        <div class="section-heading">
+          <p class="section-kicker">Apply</p>
+          <h2 id="beta-apply-heading">応募フォーム</h2>
+          <p class="section-copy">メールアドレスは必須です。表示名と補足事項は必要に応じて入力してください。</p>
+        </div>
+
+        <div class="info-card">
+          <form
+            class="feedback-form"
+            id="beta-apply-form"
+            action="/beta/apply/"
+            data-api-url="https://app.fukase-lab.com/api/beta-testers/apply"
+            method="post"
+            novalidate
+          >
+            <div class="form-status" id="beta-apply-status" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></div>
+
+            <div class="feedback-form__grid">
+              <div class="field field--full">
+                <label class="field__label" for="beta-apply-email">メールアドレス <span class="field__badge">必須</span></label>
+                <input
+                  id="beta-apply-email"
+                  name="email"
+                  type="email"
+                  maxlength="320"
+                  autocomplete="email"
+                  inputmode="email"
+                  required
+                  aria-describedby="beta-apply-email-help beta-apply-email-error"
+                >
+                <p class="field__help" id="beta-apply-email-help">受付完了と、承認後の利用案内を受け取れるアドレスを入力してください。</p>
+                <p class="field__error" id="beta-apply-email-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="beta-apply-display-name">DisplayName <span class="field__badge">任意</span></label>
+                <input
+                  id="beta-apply-display-name"
+                  name="displayName"
+                  type="text"
+                  maxlength="200"
+                  autocomplete="name"
+                  aria-describedby="beta-apply-display-name-help beta-apply-display-name-error"
+                >
+                <p class="field__help" id="beta-apply-display-name-help">アプリ内やご案内で使用する表示名です。200文字まで入力できます。</p>
+                <p class="field__error" id="beta-apply-display-name-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field field--full">
+                <label class="field__label" for="beta-apply-notes">Notes <span class="field__badge">任意</span></label>
+                <textarea
+                  id="beta-apply-notes"
+                  name="notes"
+                  rows="8"
+                  maxlength="4000"
+                  placeholder="応募にあたって伝えておきたいことがあれば入力してください。"
+                  aria-describedby="beta-apply-notes-help beta-apply-notes-count beta-apply-notes-error"
+                ></textarea>
+                <p class="field__help" id="beta-apply-notes-help">4,000文字まで入力できます。</p>
+                <p class="field__meta" id="beta-apply-notes-count">0 / 4000 文字</p>
+                <p class="field__error" id="beta-apply-notes-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="hp-field" aria-hidden="true">
+              <label for="beta-apply-website">ウェブサイト</label>
+              <input id="beta-apply-website" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+            </div>
+
+            <div class="feedback-form__note">
+              <p>応募情報は、ベータテスターの受付、承認、利用案内のために使用します。</p>
+            </div>
+
+            <div class="form-actions">
+              <button class="button button--primary" type="submit" aria-busy="false">ベータテスターに応募する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-cta">
+      <div class="footer-cta__card">
+        <p>釣行を記録し、次の一投へ。</p>
+        <nav class="site-footer-links" aria-label="フッターリンク">
+          <a class="site-footer-link" href="/">FUKASE LAB</a>
+          <a class="site-footer-link" href="/terms/">利用規約</a>
+          <a class="site-footer-link" href="/privacy/">プライバシーポリシー</a>
+          <a class="site-footer-link" href="/contact/">お問い合わせ</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./apply.js" defer></script>
+</body>
+</html>

@@ -145,6 +145,10 @@ img {
   margin-top: 0.5rem;
 }
 
+.hero--secondary .site-nav {
+  margin-bottom: 1.25rem;
+}
+
 .eyebrow-row {
   display: flex;
   flex-wrap: wrap;
